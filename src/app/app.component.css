@@ -1,0 +1,137 @@
+button {
+  cursor: pointer;
+  background-color: #d9ec2d;
+  height: 50px;
+  padding: 6px 12px;
+  font-size: 20px;
+  outline: none;
+  border-radius: 4px;
+  border: 0;
+}
+.isDanger {
+  color: #d33;
+  font-weight: 700;
+}
+.question-wrapper .wrapper-time {
+  text-align: center;
+  margin-top: 1rem;
+}
+.question-wrapper .wrapper-time > h2 {
+  font-size: 30px;
+}
+.question-wrapper {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 5px solid rgb(216, 27, 68);
+  padding: 30px 25px;
+  box-shadow: rgba(0, 0, 0, 15%);
+  position: relative;
+}
+.question-wrapper .wrapper-start {
+  text-align: center;
+}
+.wrapper-start .btn-start {
+  color: #fff;
+  background-color: #2727e4;
+  height: 50px;
+}
+
+.wrapper-start h4 {
+  margin-top: 1rem;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.question-wrapper .wrapper-title {
+  margin-bottom: 40px;
+  width: 100%;
+  text-align: left;
+  word-wrap: break-word;
+}
+.question-wrapper .wrapper-title h2 {
+  font-size: 40px;
+}
+
+.wrapper-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .wrapper-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.wrapper-grid .wrapper-item {
+  padding: 6px 20px;
+  line-height: 1.5;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 15%);
+  background-color: #d9ec2d;
+  border-radius: 8px;
+  font-size: 22px;
+  border: 2px solid transparent;
+  outline: none;
+}
+.wrapper-grid .wrapper-item:hover,
+.wrapper-grid .wrapper-item.active {
+  border: 2px solid green;
+}
+.wrapper-grid .wrapper-item > .wrapper-item-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper-grid .wrapper-item > .wrapper-item-flex > .wrapper-icon {
+  color: green;
+}
+
+.wrapper-action {
+  text-align: center;
+  margin-top: 30px;
+}
+.wrapper-action .btn-prev {
+  margin-right: 20px;
+  background-color: #d33;
+  color: #fff;
+}
+.wrapper-action .btn-next:disabled {
+  cursor: not-allowed;
+  background-color: #dbec3b;
+}
+.wrapper-action .btn-submit {
+  margin-bottom: 20px;
+  background-color: rgb(35, 35, 241);
+  color: #fff;
+  text-transform: uppercase;
+  padding: 12px 20px;
+}
+
+.wrapper-action .btn-submit:disabled {
+  cursor: not-allowed;
+  background-color: rgb(81, 81, 228);
+}
+
+.finish-game {
+  text-align: center;
+}
+.finish-game .btn-reset {
+  background-color: green;
+  margin-top: 20px;
+  color: #fff;
+}
+.finish-game .btn-restore {
+  margin-right: 12px;
+  background-color: #d33;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .simple h4 {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="question-wrapper">
+    <ng-container *ngIf="start; else startGameTemplate">
+      <ng-container *ngIf="!finishGame; else endGameTemplate">
+        <div class="wrapper-title">
+          <h2>
+            {{ questions[currentIndex].question }}
+          </h2>
+        </div>
+
+        <div class="wrapper-grid">
+          <ng-container *ngFor="let item of questions[currentIndex].items">
+            <button
+              type="button"
+              (click)="selectedAnswer(item)"
+              class="wrapper-item"
+              [ngClass]="{ active: item.answer === select.answer }"
+            >
+              <div class="wrapper-item-flex">
+                <span>
+                  {{ item.answer }}
+                </span>
+                <i
+                  *ngIf="item.answer === select.answer"
+                  class="wrapper-icon fas fa-circle-check"
+                ></i>
+              </div>
+            </button>
+          </ng-container>
+        </div>
+
+        <div class="wrapper-action">
+          <div>
+            <button
+              [disabled]="isAnswer"
+              class="btn-submit"
+              (click)="submitAnswer()"
+            >
+              next question
+            </button>
+          </div>
+        </div>
+
+        <!-- <div class="wrapper-time" [ngClass]="{ isDanger: timer <= 3 }">
+          <h2>{{ timer }}</h2>
+        </div> -->
+      </ng-container>
+    </ng-container>
+
+    <!-- =========== START QUIZ GAMES ============= -->
+    <ng-template #startGameTemplate>
+      <div class="wrapper-start">
+        <button (click)="startGame()" class="btn-start">Start Quiz Game</button>
+
+        <div class="simple">
+          <h4>Simple quiz game that make you feeling cool!</h4>
+        </div>
+      </div>
+    </ng-template>
+
+    <!-- =========== END QUIZ GAMES ============= -->
+    <ng-template #endGameTemplate>
+      <div class="finish-game">
+        <h2>Your score: {{ totalScore }}</h2>
+        <button (click)="startGame()" class="btn-restore">back page</button>
+        <button (click)="resetQuiz()" class="btn-reset">reset game</button>
+      </div>
+    </ng-template>
+  </div>
+</div>
